@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .generator-section {
+            margin-bottom: 20px;
+        }
+        .generator-section h2 {
+            color: #00796b;
+        }
+        .password-display {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .generate-button {
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="generator-section">
+            <h2>API Guided Generator</h2>
+            <div class="password-display" id="api-guided-password"></div>
+            <button class="generate-button" onclick="generateApiGuidedPassword()">Generate Password</button>
+        </div>
+        <div class="generator-section">
+            <h2>True Random Generator</h2>
+            <div class="password-display" id="true-random-password"></div>
+            <button class="generate-button" onclick="generateTrueRandomPassword()">Generate Password</button>
+        </div>
+    </div>
+
+    <script>
+        function generateApiGuidedPassword() {
+            const apiToken = '
+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';
+            // Implement API call here and update the password display element
+        }
+
+        function generateTrueRandomPassword() {
+            // Code to generate true random password
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let password = '';
+            for (let i = 0; i < 12; i++) {
+                password += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            document.getElementById('true-random-password').textContent = password;
+        }
+    </script>
+</body>
+</html>
